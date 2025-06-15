@@ -1,7 +1,7 @@
 ---
 - name: Install & Start Nginx
   hosts: all
-  become: root
+  become_user: root
 
   tasks:
   - name: Install nginx
@@ -12,6 +12,6 @@
 #we can also use
 # shell: apt install nginx
   - name: Start nginx
-      service:
-        name: nginx
-        state: started
+    service:
+      name: nginx
+      state: started
